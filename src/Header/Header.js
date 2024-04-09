@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import LOGO from "../logo-removebg-preview.png";
+import LOGO from "../LOGO.png";
 import { Dropdown } from "react-bootstrap";
 import { useState,useEffect } from "react";
 function NavScrollExample() {
@@ -25,7 +25,7 @@ function NavScrollExample() {
       <Container fluid>
         <Navbar.Brand className="flex text-2xl font-bold" href="/">
           <img src={LOGO} alt="TT" style={{ height: "40px" }} />
-          TimeTeller
+          NewsX
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

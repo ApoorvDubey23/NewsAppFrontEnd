@@ -18,7 +18,7 @@ function Main({category, country}) {
     fetchMoreData(false);
   },[category, country])
   useEffect(()=>{
-    document.title = category.charAt(0).toUpperCase() + category.slice(1) + "-TimeTeller";
+    document.title = category.charAt(0).toUpperCase() + category.slice(1) + "-NewsX";
     fetchMoreData(false);
   },[])
 
@@ -58,7 +58,7 @@ function Main({category, country}) {
   return (<div className={`${mode?"bg-white text-black":' bg-gray-900 text-white'}`} style={{marginTop:"4rem"}}>
     <div style={{ margin: "1rem" }}>
       
-      <div style={{ fontSize: "3rem", fontWeight: "900", fontStyle: "italic", textDecoration: "underline" }}>-:TimeTeller:-</div>
+      <div style={{ fontSize: "3rem", fontWeight: "900", fontStyle: "italic", textDecoration: "underline" }}>-:NewsX:-</div>
       <div className=' absolute right-3'>
       <Form className=' shadow-lg shadow-black'>
       <Form.Check 
