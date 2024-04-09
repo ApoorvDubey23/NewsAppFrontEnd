@@ -3,18 +3,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import LOGO from "../LOGO.png";
 import { Dropdown } from "react-bootstrap";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import NavDropdown from "react-bootstrap/NavDropdown";
 function NavScrollExample() {
   const [fullURL, setfullURL] = useState("");
   useEffect(() => {
-  const fullURL1=window.location.href.split('/')
+    const fullURL1 = window.location.href.split("/");
 
-    setfullURL(fullURL1[3]?fullURL1[3][0].toUpperCase()+fullURL1[3].slice(1):"General")
-  
-   
-  }, [window.location.href])
-  
-  
+    setfullURL(
+      fullURL1[3]
+        ? fullURL1[3][0].toUpperCase() + fullURL1[3].slice(1)
+        : "General"
+    );
+  }, [window.location.href]);
+
   return (
     <Navbar
       bg="dark"
@@ -34,31 +36,18 @@ function NavScrollExample() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Dropdown>
-              <Dropdown.Toggle
-                variant="dark"
-                bg="dark"
-                className=" bg-none border-[0.5px] border-white "
-                style={{
-                  borderRadius: "20px",
-                  paddingRight: "2rem",
-                  paddingLeft: "2rem",
-                }}
-                id="dropdown-basic"
-              >
-               {fullURL}
-              </Dropdown.Toggle>
+            <NavDropdown title={fullURL} id="basic-nav-dropdown">
+              
+              <NavDropdown.Item href="/">General</NavDropdown.Item>
+              <NavDropdown.Item href="/entertainment">Entertainment</NavDropdown.Item>
+              <NavDropdown.Item href="/sports">Sports</NavDropdown.Item>
+              <NavDropdown.Item href="/business">Business</NavDropdown.Item>
+              <NavDropdown.Item href="/health">Health</NavDropdown.Item>
+              <NavDropdown.Item href="/science">Science</NavDropdown.Item>
+              <NavDropdown.Item href="/technology">Technology</NavDropdown.Item>
+            </NavDropdown>
 
-              <Dropdown.Menu>
-                <Nav.Link href="/">General</Nav.Link>
-                <Nav.Link href="/entertainment">Entertainment</Nav.Link>
-                <Nav.Link href="/sports">Sports</Nav.Link>
-                <Nav.Link href="/business">Business</Nav.Link>
-                <Nav.Link href="/health">Health</Nav.Link>
-                <Nav.Link href="/science">Science</Nav.Link>
-                <Nav.Link href="/technology">Technology</Nav.Link>
-              </Dropdown.Menu>
-            </Dropdown>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

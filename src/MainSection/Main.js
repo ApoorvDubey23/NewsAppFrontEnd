@@ -59,7 +59,7 @@ function Main({category, country}) {
     <div style={{ margin: "1rem" }}>
       
       <div style={{ fontSize: "3rem", fontWeight: "900", fontStyle: "italic", textDecoration: "underline" }}>-:NewsX:-</div>
-      <div className=' absolute right-3'>
+      <div className=' flex justify-end right-3'>
       <Form className=' shadow-lg shadow-black'>
       <Form.Check 
         type="switch"
